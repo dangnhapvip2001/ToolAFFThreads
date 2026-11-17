@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 370px; font-family: system-ui, sans-serif; padding: 12px; margin: 0; background: #f8fafc; color: #1e293b; }
+    h3 { margin: 0 0 8px 0; font-size: 15px; color: #ea580c; }
+    label { font-size: 12px; font-weight: 600; display: block; margin-top: 8px; }
+    input, textarea { width: 100%; box-sizing: border-box; padding: 6px 8px; margin-top: 4px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 12px; }
+    textarea { height: 140px; resize: vertical; white-space: pre; overflow-x: auto; line-height: 1.4; }
+    .row { display: flex; gap: 6px; align-items: center; }
+    .btn { width: 100%; margin-top: 10px; padding: 9px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 12px; }
+    .btn-primary { background: #ea580c; color: white; }
+    .btn-secondary { background: #2563eb; color: white; }
+    .status { font-size: 11px; color: #16a34a; margin-top: 6px; min-height: 16px; font-weight: 600; }
+    .hint { font-size: 11px; color: #64748b; font-weight: normal; }
+  </style>
+</head>
+<body>
+  <h3>🤖 Threads Auto Affiliate Bot</h3>
+
+  <label>Affiliate ID & Sub_ID:</label>
+  <div class="row">
+    <input type="text" id="affId" placeholder="17365120686" style="flex: 1;">
+    <input type="text" id="subId" placeholder="Threads_Auto" style="flex: 1;">
+  </div>
+
+  <button class="btn btn-secondary" id="btnGrabCurrent">🔗 Lấy Link từ Tab Shopee đang mở</button>
+  <input type="text" id="currentAffLink" placeholder="Dán link Affiliate của bạn vào đây...">
+
+  <div class="row" style="margin-top: 8px;">
+    <div style="flex: 1;">
+      <label style="margin-top:0;">🔥 Lọc bài tối thiểu (Tim):</label>
+      <input type="number" id="minLikes" min="0" placeholder="VD: 20">
+    </div>
+    <div style="flex: 1;">
+      <label style="margin-top:0;">⏱️ Nghỉ chống spam (Giây):</label>
+      <div class="row">
+        <input type="number" id="minDelay" min="10" placeholder="30">
+        <span>-</span>
+        <input type="number" id="maxDelay" min="15" placeholder="60">
+      </div>
+    </div>
+  </div>
+
+  <label>📝 10 Kịch bản Caption <span class="hint">(Mỗi dòng 1 kịch bản, tự ghép link):</span></label>
+  <textarea id="captionList" placeholder="Dòng 1: Kịch bản 1...&#10;Dòng 2: Kịch bản 2..."></textarea>
+
+  <button class="btn btn-primary" id="btnSave">💾 Lưu Cấu Hình</button>
+  <div class="status" id="statusMsg"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

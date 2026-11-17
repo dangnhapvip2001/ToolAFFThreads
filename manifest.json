@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Threads Auto Affiliate Bot Pro",
+  "version": "2.0.0",
+  "description": "Tự động cuộn tìm bài nhiều view trên Threads, xoay vòng 10 kịch bản và tự động đăng comment Affiliate.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.threads.com/*",
+    "*://*.threads.net/*",
+    "*://*.shopee.vn/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.threads.com/*",
+        "*://*.threads.net/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
